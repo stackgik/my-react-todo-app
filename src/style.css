@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Roboto:ital,wght@1,400;1,700;1,900&display=swap');
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+  background-color: #f1f1f1;
+  font-family: 'Nunito', sans-serif;
+}
+
+button,
+select {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.todo-container {
+  background-color: #fff;
+  color: #fff;
+  width: min(100% - 2rem, 45em);
+  min-height: 40rem;
+  margin: 3rem auto;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(todo.webp);
+  background-size: cover;
+
+  .date {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .day {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    @media (max-width: 470px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .month {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ccc;
+  }
+
+  .tasks {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+}
+
+.add-todo {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 4;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 6rem;
+  aspect-ratio: 1;
+  color: #0b1215;
+  background-color: #fff;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+.main {
+  padding: 5rem 2rem;
+  background-color: #fff;
+  color: #0b1215;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @media (max-width: 470px) {
+    padding-inline: 1rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #495057;
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 1px;
+  }
+
+  .todos {
+    list-style-type: none;
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+
+    .todo {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 1.6rem;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    span {
+      @media (max-width: 470px) {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.5rem);
+}
+
+.modal {
+  position: absolute;
+  background-color: #f8f9fa;
+  width: 90%;
+  padding: 2rem;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .form {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+  }
+
+  .form input {
+    background-color: transparent;
+    font-family: inherit;
+    padding: 1.5rem 2rem;
+    width: 100%;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    outline: none;
+    color: #444;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+
+  .btn {
+    width: max-content;
+    align-self: flex-end;
+    padding: 1.5rem 2rem;
+    background-color: #0b1215;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+    border-radius: 5rem;
+  }
+}
+
+.plus-sign {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.plus-sign.rotated {
+  transform: rotate(45deg); /* Rotates the plus sign by 45 degrees */
+}
+
+.todo-wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border: 1px solid #dee2e6;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+
+  .delete__icon {
+    height: 2rem;
+    aspect-ratio: 1;
+    fill: #f00;
+  }
+}
+
+.actions {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+
+  @media (max-width: 470px) {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  select,
+  button {
+    padding: 1.2rem 1.5rem;
+    color: #0b1215;
+    border: 1px solid #dee2e6;
+    border-radius: 4rem;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all 0.3s linear;
+
+    @media (max-width: 470px) {
+      font-size: 0.8rem;
+      padding: 1rem;
+    }
+
+    &:hover {
+      border-color: #adb5bd;
+    }
+  }
+}
