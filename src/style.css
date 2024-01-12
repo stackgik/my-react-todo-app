@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Roboto:ital,wght@1,400;1,700;1,900&display=swap');
-html {
-  font-size: 62.5%;
-}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
@@ -192,7 +193,7 @@ select {
 }
 
 .plus-sign.rotated {
-  transform: rotate(45deg); /* Rotates the plus sign by 45 degrees */
+  transform: rotate(45deg);
 }
 
 .todo-wrapper {
@@ -224,9 +225,9 @@ select {
   button {
     padding: 1.2rem 1.5rem;
     color: #0b1215;
-    border: 1px solid #dee2e6 !important;
+    border: 1px solid #dee2e6;
     border-radius: 4rem;
-    text-transform: uppercase !important;
+    text-transform: uppercase;
     font-size: 1.1rem;
     font-weight: 700;
     transition: all 0.3s linear;
@@ -241,5 +242,3 @@ select {
     }
   }
 }
-
-/* accordion app */
